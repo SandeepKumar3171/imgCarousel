@@ -1,23 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Slider from "react-slick";
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
+import img1 from '../src/image/img-1.jpg'
+import img2 from '../src/image/img-2.jpg'
+import img3 from '../src/image/img-3.jpg'
+import img4 from '../src/image/pic-4.jpg'
 
 function App() {
+
+  const settings={
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 1000,
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+     <Slider {...settings}>
+      <div>
+        <img src={img1} alt="Image 1" />
+       
+      </div>
+      <div>
+        <img src={img2} alt="Image 2" />
+      </div>
+      <div>
+        <img src={img3} alt="Image 2" />
+      </div>
+      <div>
+        <img src={img4} alt="Image 2" />
+      </div>
+      {/* Add more slides as needed */}
+    </Slider>
     </div>
   );
 }
